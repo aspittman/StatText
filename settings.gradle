@@ -1,0 +1,2 @@
+rootProject.name = "StatText"
+include ':app'
