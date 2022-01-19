@@ -3,20 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/add_permissions"
-        android:icon="@drawable/ic_home"
-        android:title="@string/menu_home"
-        app:showAsAction="ifRoom"/>
-
-    <item
         android:id="@+id/refresh_home"
-        android:icon="@drawable/ic_messages"
-        android:title="@string/menu_statistics"
-        app:showAsAction="ifRoom"/>
+        android:icon="@drawable/refresh"
+        android:title="@string/toolbar_menu_refresh"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="1"/>
 
     <item
         android:id="@+id/light_dark"
-        android:icon="@drawable/ic_forum"
-        android:title="@string/menu_forum"
-        app:showAsAction="ifRoom"/>
+        android:icon="@drawable/darkmode"
+        android:title="@string/toolbar_menu_darkmode"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="2"/>
+
+    <item
+        android:id="@+id/add_permissions"
+        android:icon="@drawable/security"
+        android:title="@string/toolbar_menu_permissions"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="3"/>
 </menu>

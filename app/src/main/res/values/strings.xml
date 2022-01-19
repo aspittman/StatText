@@ -6,6 +6,11 @@
     <string name="menu_forum">Forum</string>
     <string name="menu_messages">Messages</string>
 
+    <!--Toolbar menu titles-->
+    <string name="toolbar_menu_refresh">Refresh</string>
+    <string name="toolbar_menu_darkmode">DarkMode</string>
+    <string name="toolbar_menu_permissions">Permissions</string>
+
     <!--Graph Labels-->
     <string name="tab_day">Day</string>
     <string name="tab_week">Week</string>

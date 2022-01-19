@@ -41,8 +41,9 @@ class MainUIIntegrationTest {
         onView(withId(R.id.fragment_messages)).perform(click())
         onView(withText("Jack")).check(matches(isDisplayed()))
 
-        onView(withId(R.id.add_permissions)).perform(click())
         onView(withId(R.id.refresh_home)).perform(click())
         onView(withId(R.id.light_dark)).perform(click())
+        onView(withId(R.id.light_dark)).perform(click())
+        onView(withId(R.id.add_permissions)).perform(click())
     }
 }
