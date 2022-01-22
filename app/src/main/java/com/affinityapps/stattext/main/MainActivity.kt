@@ -64,11 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         return when (item.itemId) {
             R.id.add_permissions -> {
-                ActivityCompat.requestPermissions(
-                    this,
-                    arrayOf(READ_CONTACTS),
-                    10
-                )
+                ActivityCompat.requestPermissions(this, arrayOf(READ_CONTACTS), 10)
                 true
             }
             R.id.light_dark -> {
@@ -76,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.refresh_home -> {
-                testMenuThree()
+                recreate()
                 true
             }
             else -> super.onOptionsItemSelected(item)
