@@ -3,7 +3,7 @@
     <string name="app_name">StatText</string>
     <string name="menu_home">Home</string>
     <string name="menu_statistics">Statistics</string>
-    <string name="menu_forum">Forum</string>
+    <string name="menu_summary">Summary</string>
     <string name="menu_messages">Messages</string>
 
     <!--Toolbar menu titles-->

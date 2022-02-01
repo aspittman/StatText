@@ -27,7 +27,6 @@ class MainUIIntegrationTest {
 
     @Test fun recyclerViewsResponseTest() {
         onView(withId(R.layout.activity_main))
-        onView(withText("StatText")).check(matches(isDisplayed()))
 
         onView(withId(R.id.fragment_home)).perform(click())
         onView(withText("Bob")).check(matches(isDisplayed()))
@@ -56,7 +55,6 @@ class MainUIIntegrationTest {
 
     @Test fun mainUIResponseTest() {
         onView(withId(R.layout.activity_main))
-        onView(withText("StatText")).check(matches(isDisplayed()))
 
         //home recyclerview ui response test
         onView(withId(R.id.fragment_home)).perform(click())

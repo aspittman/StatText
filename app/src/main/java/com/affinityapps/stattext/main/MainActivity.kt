@@ -26,11 +26,10 @@ import com.affinityapps.stattext.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import android.Manifest.permission.ACCESS_FINE_LOCATION
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.navigation.ui.setupActionBarWithNavController
 
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,12 +45,13 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         findViewById<BottomNavigationView>(R.id.nav_view)
             .setupWithNavController(navController)
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.fragment_home, R.id.fragment_statistics, R.id.fragment_summary,
+                R.id.fragment_messages
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

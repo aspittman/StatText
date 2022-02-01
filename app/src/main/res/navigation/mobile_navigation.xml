@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/fragment_home"
         android:name="com.affinityapps.stattext.home.HomeFragment"
-        android:label="Home Fragment"
+        android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/date_statistics_transfer"
@@ -34,7 +34,7 @@
     <fragment
         android:id="@+id/fragment_statistics"
         android:name="com.affinityapps.stattext.graphs.StatisticsFragment"
-        android:label="Statistics Fragment"
+        android:label="@string/menu_statistics"
         tools:layout="@layout/fragment_statistics">
         <argument
             android:name="DateStatistics"
@@ -47,7 +47,7 @@
     <fragment
         android:id="@+id/fragment_summary"
         android:name="com.affinityapps.stattext.summary.SummaryFragment"
-        android:label="Summary Fragment"
+        android:label="@string/menu_summary"
         tools:layout="@layout/fragment_summary">
         <argument
             android:name="DateSummary"
@@ -60,7 +60,7 @@
     <fragment
         android:id="@+id/fragment_messages"
         android:name="com.affinityapps.stattext.messages.MessagesFragment"
-        android:label="Messages Fragment"
+        android:label="@string/menu_messages"
         tools:layout="@layout/fragment_messages">
         <argument
             android:name="DateMessages"
