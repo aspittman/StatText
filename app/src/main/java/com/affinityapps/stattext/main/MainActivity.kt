@@ -1,11 +1,12 @@
 package com.affinityapps.stattext.main
 
-import android.Manifest
-import android.Manifest.permission
 import android.Manifest.permission.READ_CONTACTS
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -13,23 +14,19 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.affinityapps.stattext.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import android.Manifest.permission.ACCESS_FINE_LOCATION
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.navigation.ui.setupActionBarWithNavController
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity() : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,24 +60,13 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         return when (item.itemId) {
-            R.id.add_permissions -> {
-                ActivityCompat.requestPermissions(this, arrayOf(READ_CONTACTS), 10)
-                true
-            }
-            R.id.light_dark -> {
-                darkLightMode()
-                true
-            }
-            R.id.refresh_home -> {
-                recreate()
+            R.id.settings -> {
+                val downloadIntent = Intent(this, Settings::class.java)
+                startActivity(downloadIntent)
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun testMenuThree() {
-        Toast.makeText(this, "Bar Three", Toast.LENGTH_SHORT).show()
     }
 
     private val requestPermissionLauncher =
@@ -97,12 +83,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun darkLightMode() {
         val nightMode: Int = AppCompatDelegate.getDefaultNightMode()
+
         if (nightMode == AppCompatDelegate.MODE_NIGHT_YES) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
-        recreate()
     }
 
     private fun requestPermission() {

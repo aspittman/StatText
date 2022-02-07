@@ -1,7 +1,9 @@
 package com.affinityapps.stattext.home
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Color
+import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
